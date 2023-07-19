@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateScoreText(int newScore)
     {
-        scoreText.text = "Score: " + newScore;
+        scoreText.text = "Score : " + newScore;
     }
 
     public void SetActiveGameoverUI(bool active)

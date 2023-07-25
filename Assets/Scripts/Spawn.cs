@@ -7,6 +7,7 @@ public class Spawn : MonoBehaviour
 {
     public Transform[] pos;
     public GameObject[] prefab;
+
     AudioSource audio;
     ARSession arSession;
     ARCameraManager arCameraManager;

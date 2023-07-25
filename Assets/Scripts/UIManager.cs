@@ -22,14 +22,23 @@ public class UIManager : MonoBehaviour
     private static UIManager m_instance; //싱글턴이 할당될 변수
 
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI healthText;
 
     public GameObject gameoverUI;
     public GameObject RestartUI;
+    public GameObject MainUI;
+    public GameObject NextStageUI;
+    public GameObject clearUI;
     public int sceneNumber;
 
     public void UpdateScoreText(int newScore)
     {
         scoreText.text = "Score : " + newScore;
+    }
+
+    public void UpdateHealthText(int heart)
+    {
+        healthText.text = "x " + heart;
     }
 
     public void SetActiveGameoverUI(bool active)
@@ -40,6 +49,21 @@ public class UIManager : MonoBehaviour
     public void SetActiveRestartUI(bool active)
     {
         RestartUI.SetActive(active);
+    }
+
+    public void SetActiveMainUI(bool active)
+    {
+        MainUI.SetActive(active);
+    }
+
+    public void SetActiveNextStageUI(bool active)
+    {
+        NextStageUI.SetActive(active);
+    }
+
+    public void SetActiveClearUI(bool active)
+    {
+        clearUI.SetActive(active);
     }
 
     public void GameRestart()

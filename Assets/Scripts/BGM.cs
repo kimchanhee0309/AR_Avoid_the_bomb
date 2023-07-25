@@ -8,6 +8,7 @@ public class BGM : MonoBehaviour
     public AudioClip bgmClip; //재생할 BGM 비디오 클립
     private AudioSource audioSource;
     private string targetSceneName = "SampleScene"; //BGM을 끊을 특정 씬의 이름
+    private string targetSceneName1 = "stage2"; //BGM을 끊을 특정 씬의 이름
 
     private void Awake()
     {
@@ -25,6 +26,12 @@ public class BGM : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if(scene.name == targetSceneName)
+        {
+            audioSource.Stop(); //특정 씬에서 BGM 중지
+            Destroy(gameObject); //BGMManager 객체 파괴
+        }
+
+        if (scene.name == targetSceneName1)
         {
             audioSource.Stop(); //특정 씬에서 BGM 중지
             Destroy(gameObject); //BGMManager 객체 파괴
